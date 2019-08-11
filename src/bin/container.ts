@@ -1,8 +1,9 @@
-import { createContainer, InjectionMode, asValue, AwilixContainer } from 'awilix';
+import { createContainer, InjectionMode, asValue, asClass, AwilixContainer } from 'awilix';
 
+import { controllers } from '../api';
 import { environment } from '../config';
 import { logger } from '../services/logger';
-import { helloHandler } from '../api/hello/hello';
+import { Server } from '../server';
 
 export const makeContainer = (depsOverride?: Record<string, any>): AwilixContainer => {
   const container = createContainer({
@@ -12,7 +13,10 @@ export const makeContainer = (depsOverride?: Record<string, any>): AwilixContain
   container.register({
     environment: asValue(environment),
     logger: asValue(logger),
-    messageController: asValue(helloHandler),
+    controllers: asValue(controllers),
+    server: asClass(Server)
+      .singleton()
+      .disposer((server): Promise<void> => server.dispose()),
     ...depsOverride
   });
 

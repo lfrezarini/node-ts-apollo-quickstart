@@ -1,4 +1,4 @@
-import { helloHandler } from './hello';
+import { helloHandler } from './index';
 
 test("should call end with the message 'hello world'", (): void => {
   const request = {};
