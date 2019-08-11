@@ -13,7 +13,9 @@
   "author": "Lucas Frezarini da Silva",
   "license": "ISC",
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/glob": "^7.1.1",
+    "@types/hapi__joi": "^15.0.3",
     "@types/jest": "^24.0.17",
     "@types/node": "^12.7.1",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
@@ -34,7 +36,9 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "@hapi/joi": "^15.1.0",
     "awilix": "^4.2.2",
+    "dotenv": "^8.0.0",
     "winston": "^3.2.1"
   },
   "husky": {
