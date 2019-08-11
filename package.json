@@ -1,0 +1,51 @@
+{
+  "name": "node-ts-quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon --watch \"src\" --exec \"ts-node src/server.ts\" -e ts",
+    "start": "node dist/server.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Lucas Frezarini da Silva",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.1",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.3",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.1",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "awilix": "^4.2.2",
+    "winston": "^3.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,json}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
