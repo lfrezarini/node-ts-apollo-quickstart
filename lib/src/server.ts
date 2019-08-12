@@ -12,7 +12,7 @@ export class Server {
 
   private logger: Logger;
 
-  private server: ApolloServer;
+  public readonly server: ApolloServer;
 
   public constructor(environment: Config, logger: Logger, resolvers: IResolvers, typeDefs: DocumentNode[]) {
     this.logger = logger;
