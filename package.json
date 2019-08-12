@@ -37,8 +37,11 @@
   },
   "dependencies": {
     "@hapi/joi": "^15.1.0",
+    "apollo-server": "^2.8.1",
     "awilix": "^4.2.2",
     "dotenv": "^8.0.0",
+    "graphql": "^14.4.2",
+    "graphql-tools": "^4.0.5",
     "winston": "^3.2.1"
   },
   "husky": {
